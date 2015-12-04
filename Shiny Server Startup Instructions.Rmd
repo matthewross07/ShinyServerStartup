@@ -1,0 +1,22 @@
+---
+title: "Shiny Server Startup Instructions"
+author: "Matthew Ross"
+date: "December 4, 2015"
+output: html_document
+---
+
+This is a set of scripts that should help you get your shiny server started. I wrote it with Duke's shiny server setup in mind, but it should be relatively generalizable to any Linux server. Most of it comes from Richard Marinos, and I'm just formalizing his very helpful emails. 
+
+First, you will need to request a Shiny VM through duke OIT. 
+
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
