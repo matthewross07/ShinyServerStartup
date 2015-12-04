@@ -12,7 +12,7 @@ This is a set of scripts that should help you get your shiny server started. I w
 2. Copy the server address they give you 
 3. Go into Terminal (mac) or a command line emulator like PuTTY (windows) and type
   + For windows, make sure SSH type is what is selected to connect
-```{r}
+```{r, eval=FALSE}
 #Mac
 ssh bitnami@servername.oit.duke.edu
 #Windows, with SSH
@@ -28,28 +28,28 @@ Once you have accessed the server you will be working in what is called a "Linux
 
 1. Change your password by 
 
-```{r, echo=FALSE}
+```{r, eval=FALSE}
 passwd NEWPASSWORD
 ```
 
 2. Install your favorite packages in R as "Root" user, so that they are permanently stored on the server. This is just a wrapper around the classic "install.packages" that you would use inside R. I have a list of key packages here. But you can add more by just adding a comma and then the package name. This will work for most pacages, but all the geospatial ones require installing GDAL on the server which is more complicated, instructions for doing that are in another file in this folder "GDAL Server Install"
 
-```{r, echo=FALSE}
+```{r, eval=FALSE}
 sudo su - root -c "R -e \"install.packages(c('lubridate','ggplot2','shiny','rgl','shinyRGL','sp','raster','rasterVis','reshape2','shape','maptools','fields'),repos='http://cran.rstudio.com/')\""
 ```
 
 3. Change directory to the shiny server directory
-```{r, echo=FALSE}
+```{r, eval=FALSE}
 cd /srv/shiny-server
 ```
 
 4. Make a new directory for your app
-```{r, echo=FALSE}
+```{r, eval=FALSE}
 sudo mkdir APPNAME
 ```
 
 5. Change ownership from 'root' to bitnami
-```{r, echo=FALSE}
+```{r, eval=FALSE}
 sudo chown bitnami APPNAME
 ```
 
