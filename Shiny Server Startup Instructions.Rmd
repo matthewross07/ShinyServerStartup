@@ -12,10 +12,11 @@ This is a set of scripts that should help you get your shiny server started. I w
 2. Copy the server address they give you 
 3. Go into Terminal (mac) or a command line emulator like PuTTY (windows) and type
   + For windows, make sure SSH type is what is selected to connect
+  + Helpful link for SSH http://support.suso.com/supki/SSH_Tutorial_for_Windows 
 ```{r, eval=FALSE}
 #Mac
 ssh bitnami@servername.oit.duke.edu
-#Windows, with SSH
+#Windows, with SSH User name is bitnami
 bitnami@servername.oit.duke.edu
 ```
 
@@ -30,6 +31,8 @@ Once you have accessed the server you will be working in what is called a "Linux
 
 ```{r, eval=FALSE}
 passwd NEWPASSWORD
+#OR
+passwd bitnami NEWPASSOWRD
 ```
 
 2. Install your favorite packages in R as "Root" user, so that they are permanently stored on the server. This is just a wrapper around the classic "install.packages" that you would use inside R. I have a list of key packages here. But you can add more by just adding a comma and then the package name. This will work for most pacages, but all the geospatial ones require installing GDAL on the server which is more complicated, instructions for doing that are in another file in this folder "GDAL Server Install"
@@ -61,11 +64,13 @@ Now is the easier GUI part of the server setup. You can use any FTP client, I pr
 4. Paste the server address should be something like "colab-sbx-65.oit.duke.edu" but with a different number. 
 5. Enter username as "bitnami""
 6. Enter your password.
+ + You may get a warning that the key is not recognized, you can ignore it and shouldn't get the warning again. (Mostly windows issue)
+ + Info here  https://trac.cyberduck.io/wiki/help/en/howto/sftp
 7. You should see a bunch of folders, navigate to your shiny app folder which should be in /srv/shiny-server/APPNAME.
 8. Drag and drop your files into this server. 
 9. **Key** The app will not work if you have directories pointing outside of the folder. All data should be inside the folder and directories should be setup locally only. 
 10. Now your app should be up and running, by navigating to port 3838/appname. Like here: http://colab-sbx-65.oit.duke.edu:3838/MTM_Explore/
 
-Please improve this tutorial by adding your thoughts or problems you run into. 
+Please improve this tutorial by adding your thoughts or problems you run into. Thanks to Lauren Patterson for improving. 
 
 

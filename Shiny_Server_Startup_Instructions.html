@@ -77,10 +77,11 @@ img {
 </ol>
 <ul>
 <li>For windows, make sure SSH type is what is selected to connect</li>
+<li>Helpful link for SSH <a href="http://support.suso.com/supki/SSH_Tutorial_for_Windows" class="uri">http://support.suso.com/supki/SSH_Tutorial_for_Windows</a></li>
 </ul>
 <pre class="r"><code>#Mac
 ssh bitnami@servername.oit.duke.edu
-#Windows, with SSH
+#Windows, with SSH User name is bitnami
 bitnami@servername.oit.duke.edu</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Hit enter, or open.</li>
@@ -93,7 +94,9 @@ bitnami@servername.oit.duke.edu</code></pre>
 <ol style="list-style-type: decimal">
 <li>Change your password by</li>
 </ol>
-<pre class="r"><code>passwd NEWPASSWORD</code></pre>
+<pre class="r"><code>passwd NEWPASSWORD
+#OR
+passwd bitnami NEWPASSOWRD</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Install your favorite packages in R as “Root” user, so that they are permanently stored on the server. This is just a wrapper around the classic “install.packages” that you would use inside R. I have a list of key packages here. But you can add more by just adding a comma and then the package name. This will work for most pacages, but all the geospatial ones require installing GDAL on the server which is more complicated, instructions for doing that are in another file in this folder “GDAL Server Install”</li>
 </ol>
@@ -113,8 +116,26 @@ bitnami@servername.oit.duke.edu</code></pre>
 </div>
 <div id="uploading-files-to-app-folder" class="section level2">
 <h2>Uploading files to app folder</h2>
-<p>Now is the easier GUI part of the server setup. You can use any FTP client, I prefer cyberduck, to upload your shiny app and its data. 1. Download and install cyberduck 2. Click “Open Connection” 3. Change type to “SFTP” to connect via ssh 4. Paste the server address should be something like “colab-sbx-65.oit.duke.edu” but with a different number. 5. Enter username as “bitnami”&quot; 6. Enter your password. 7. You should see a bunch of folders, navigate to your shiny app folder which should be in /srv/shiny-server/APPNAME. 8. Drag and drop your files into this server. 9. <strong>Key</strong> The app will not work if you have directories pointing outside of the folder. All data should be inside the folder and directories should be setup locally only. 10. Now your app should be up and running, by navigating to port 3838/appname. Like here: <a href="http://colab-sbx-65.oit.duke.edu:3838/MTM_Explore/" class="uri">http://colab-sbx-65.oit.duke.edu:3838/MTM_Explore/</a></p>
-<p>Please improve this tutorial by adding your thoughts or problems you run into.</p>
+<p>Now is the easier GUI part of the server setup. You can use any FTP client, I prefer cyberduck, to upload your shiny app and its data.</p>
+<ol style="list-style-type: decimal">
+<li><p>Download and install cyberduck</p></li>
+<li><p>Click “Open Connection”</p></li>
+<li><p>Change type to “SFTP” to connect via ssh</p></li>
+<li><p>Paste the server address should be something like “colab-sbx-65.oit.duke.edu” but with a different number.</p></li>
+<li><p>Enter username as “bitnami”</p></li>
+<li><p>Enter your password.</p></li>
+</ol>
+<ul>
+<li><p>You may get a warning that the key is not recognized, you can ignore it and shouldn’t get the warning again. (Mostly windows issue)</p></li>
+<li><p>Info here <a href="https://trac.cyberduck.io/wiki/help/en/howto/sftp" class="uri">https://trac.cyberduck.io/wiki/help/en/howto/sftp</a></p></li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li><p>You should see a bunch of folders, navigate to your shiny app folder which should be in /srv/shiny-server/APPNAME.</p></li>
+<li><p>Drag and drop your files into this server.</p></li>
+<li><p><strong>Key</strong> The app will not work if you have directories pointing outside of the folder. All data should be inside the folder and directories should be setup locally only.</p></li>
+<li><p>Now your app should be up and running, by navigating to port 3838/appname. Like here: <a href="http://colab-sbx-65.oit.duke.edu:3838/MTM_Explore/" class="uri">http://colab-sbx-65.oit.duke.edu:3838/MTM_Explore/</a></p></li>
+</ol>
+<p>Please improve this tutorial by adding your thoughts or problems you run into. Thanks to Lauren Patterson for improving.</p>
 </div>
 
 
